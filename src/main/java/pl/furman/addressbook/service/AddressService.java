@@ -14,10 +14,6 @@ public class AddressService {
         return addressRepository.findAll();
     }
 
-    public Address getSinglePost(Long id) {
-        return addressRepository.findById(id).orElseThrow();
-    }
-
     public Address postAddress(Address address) {
         System.out.println(address);
         return addressRepository.save(address);

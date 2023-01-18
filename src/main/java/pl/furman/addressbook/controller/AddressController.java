@@ -18,11 +18,6 @@ public class AddressController {
         return addressService.getPosts();
     }
 
-    @GetMapping("/addresses/{id}")
-    public Address getSingleAddress(@PathVariable long id){
-        return addressService.getSinglePost(id);
-    }
-
     @PostMapping("/addresses")
     public Address postAddress(@RequestBody Address address) {
         return addressService.postAddress(address);
