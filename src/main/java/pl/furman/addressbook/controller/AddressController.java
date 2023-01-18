@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
+@CrossOrigin("*")
 public class AddressController {
     private final AddressService addressService;
     @GetMapping("/addresses")
@@ -25,6 +26,11 @@ public class AddressController {
     @PostMapping("/addresses")
     public Address postAddress(@RequestBody Address address) {
         return addressService.postAddress(address);
+    }
+
+    @DeleteMapping("/addresses/{id}")
+    public void deleteAddress(@PathVariable long id) {
+        addressService.deleteAddress(id);
     }
 
 }

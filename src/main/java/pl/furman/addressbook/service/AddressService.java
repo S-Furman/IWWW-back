@@ -22,4 +22,8 @@ public class AddressService {
         System.out.println(address);
         return addressRepository.save(address);
     }
+
+    public void deleteAddress(Long id) {
+        addressRepository.deleteById(id);
+    }
 }
